@@ -100,7 +100,7 @@ export function Navigation() {
             {/* Standard Links */}
             <Link
               href="/who-we-are"
-              className={`relative text-sm font-medium group ${
+              className={`relative text-base font-medium group ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
@@ -115,7 +115,7 @@ export function Navigation() {
               onMouseLeave={() => setIsMegaOpen(false)}
             >
               <button
-                className={`relative flex items-center text-sm font-medium group ${
+                className={`relative flex items-center text-base font-medium group ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
@@ -123,7 +123,7 @@ export function Navigation() {
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
 
                 {/* Hover underline */}
-                <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-[-3px] h-[4px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
               </button>
 
               {/* Mega Menu */}
@@ -156,7 +156,7 @@ export function Navigation() {
             {/* Other Links */}
             <Link
               href="/how-we-work"
-              className={`relative text-sm font-medium group ${
+              className={`relative text-base font-medium group ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
@@ -166,7 +166,7 @@ export function Navigation() {
 
             <Link
               href="/blogs"
-              className={`relative text-sm font-medium group ${
+              className={`relative text-base font-medium group ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
