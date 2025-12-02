@@ -1,4 +1,3 @@
-// app/design-process/page.tsx
 import React from "react";
 import {
   HiOutlineChat,
@@ -7,113 +6,220 @@ import {
   HiOutlineEye,
   HiOutlineDocumentReport,
 } from "react-icons/hi";
+import { motion } from "framer-motion";
 
-const DesignProcess = () => {
+export default function WorkSection() {
   const processSteps = [
     {
       id: 1,
-      title: "Customer needs analysis",
+      title: "Customer Needs Analysis",
       description:
-        "We evaluate and understand each client’s unique requirements. By analyzing their goals and challenges, we create solutions that truly fit. This ensures our approach delivers maximum impact and satisfaction.",
+        "We assess your sector-specific goals—whether construction, hospitality, or healthcare—and tailor solutions to Portugal's unique operational landscape. Direct insights ensure 100% alignment with EU standards from day one.",
       icon: <HiOutlineChat className="w-8 h-8 text-white" />,
     },
     {
       id: 2,
-      title: "Customized operational proposal",
+      title: "Customized Operational Proposal",
       description:
-        "We design operational proposals tailored to each client’s specific needs. Our solutions focus on efficiency, clarity, and actionable steps. This ensures a practical plan aligned with business objectives.",
+        "Our proposals blend efficiency with compliance, drawing from in-house expertise across industries. We outline clear, actionable steps for seamless integration, minimizing disruptions while maximizing ROI.",
       icon: <HiOutlineSearch className="w-8 h-8 text-white" />,
     },
     {
       id: 3,
-      title: "Internal team assignment",
+      title: "Internal Team Assignment",
       description:
-        "We allocate the right team members to each project based on their expertise. Our teams work collaboratively to ensure efficiency and high-quality outcomes. This structured assignment guarantees timely and effective results.",
+        "100% direct-employed teams, rigorously trained and vetted, are assigned based on your project's demands. This guarantees specialized skills, cultural fit, and unwavering reliability for every contract.",
       icon: <HiOutlineUserGroup className="w-8 h-8 text-white" />,
     },
     {
       id: 4,
-      title: "Constant supervision",
+      title: "Constant Supervision",
       description:
-        "We maintain continuous oversight throughout every project to ensure smooth execution. Regular monitoring helps identify and resolve issues promptly. This guarantees consistent quality and timely delivery.",
+        "24/7 oversight by certified supervisors ensures real-time adjustments and adherence to safety/performance KPIs. Proactive monitoring keeps projects on track, reducing risks in dynamic sectors like logistics or shipbuilding.",
       icon: <HiOutlineEye className="w-8 h-8 text-white" />,
     },
     {
       id: 5,
-      title: "Monthly reports and quality control",
+      title: "Monthly Reports & Quality Control",
       description:
-        "We provide detailed monthly reports to track progress and performance. Our quality control processes ensure that every deliverable meets high standards. This helps maintain transparency and consistently achieve excellent results.",
+        "Transparent reports track milestones, KPIs, and improvements, backed by ISO-compliant audits. This fosters ongoing excellence, client confidence, and sustained partnerships across Portugal.",
       icon: <HiOutlineDocumentReport className="w-8 h-8 text-white" />,
     },
   ];
 
   return (
-    <div className="relative min-h-screen py-16 px-4">
-      {/* Background Image with repeat */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/home/hexellence.png')] bg-repeat bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white opacity-80"></div>
+    <section className="relative py-24 lg:py-32 overflow-hidden bg-white">
+      {/* PREMIUM BACKGROUND PATTERN - Layered & Animated */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* 1. Subtle Wave Pattern (Coastal Portugal Vibe) */}
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(`
+              <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="waves" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                    <path d="M0,100 Q50,50 100,100 T200,100" stroke="#1e40af" stroke-width="2" fill="none" opacity="0.4"/>
+                    <path d="M0,140 Q50,190 100,140 T200,140" stroke="#3b82f6" stroke-width="1.5" fill="none" opacity="0.3"/>
+                  </pattern>
+                </defs>
+                <rect width="200" height="200" fill="url(#waves)" />
+              </svg>
+            `)}")`,
+            backgroundSize: "300px 300px",
+          }}
+        />
+
+        {/* 2. Ultra-faint Grid (Structure & Precision) */}
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(`
+              <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" fill="white"/>
+                <path d="M0,0 H80 M0,80 H80 V0 M40,0 V80 M0,40 H80" stroke="#1e3a8a" stroke-width="0.5" opacity="0.15"/>
+              </svg>
+            `)}")`,
+          }}
+        />
+
+        {/* 3. Animated Floating Orbs (Premium Movement) */}
+        <motion.div
+          animate={{
+            y: [0, -40, 0],
+            x: [0, 30, 0],
+          }}
+          transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-600/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [0, 40, 0],
+            x: [0, -40, 0],
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-32 right-20 w-80 h-80 bg-gradient-to-tl from-cyan-400/10 to-blue-600/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.03, 0.06, 0.03],
+          }}
+          transition={{ duration: 18, repeat: Infinity }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-400/5 via-transparent to-transparent rounded-full blur-3xl"
+        />
       </div>
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            <span className="text-gray-800">Professional Process</span>
-          </h1>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-            Our professional process ensures each project is planned and
-            executed with precision. From initial strategy to final delivery, we
-            focus on quality, efficiency, and client satisfaction at every step.
-          </p>
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block px-6 py-3 bg-blue-50 text-blue-700 font-bold rounded-full text-sm tracking-wider mb-6"
+          >
+            OUR PROVEN PROCESS
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight"
+          >
+            Built for Portugal's
+            <span className="block text-[#1B3275]">Most Demanding Sectors</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed"
+          >
+            From consultation to execution — 100% direct-employed, EU-certified teams delivering 
+            <span className="font-bold text-blue-700"> measurable results</span> across the country.
+          </motion.p>
+
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "120px" }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="h-1.5 mx-auto bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full mt-8"
+          />
         </div>
 
-        {/* Process Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#1B3275] hidden md:block"></div>
+        {/* Timeline */}
+        <div className="relative mt-20">
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#1B3275]/20 via-blue-400/30 to-[#1B3275]/20 hidden lg:block rounded-full" />
 
-          {/* Process Steps */}
-          <div className="space-y-12">
+          <div className="space-y-20 lg:space-y-32">
             {processSteps.map((step, index) => (
-              <div
+              <motion.div
                 key={step.id}
-                className={`relative flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className={`relative flex flex-col lg:flex-row items-center gap-10 ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 {/* Icon */}
-                <div className="flex-shrink-0 relative z-10 w-16 h-16 rounded-full bg-[#1B3275] flex items-center justify-center text-2xl font-bold shadow-lg mb-4 md:mb-0">
-                  {step.icon}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-gradient-to-br from-[#1B3275] via-blue-800 to-indigo-900 p-1 shadow-2xl">
+                    <div className="w-full h-full rounded-3xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <div className="absolute -inset-4 bg-blue-600/10 rounded-full blur-xl -z-10" />
                 </div>
 
                 {/* Content Card */}
-                <div
-                  className={`md:w-1/2 ${
-                    index % 2 === 0 ? "md:pl-12" : "md:pr-12"
-                  }`}
-                >
-                  <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div className="flex items-center mb-3 md:mb-4">
-                      <span className="text-sm font-semibold text-[#1B3275] bg-green-50 px-3 py-1 rounded-full">
-                        Step {step.id}
-                      </span>
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">
+                <div className={`lg:w-1/2 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
+                  <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold text-sm rounded-full mb-4">
+                      Step {step.id} of 5
+                    </span>
+                    <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                    <p className="text-lg text-slate-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default DesignProcess;
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="text-center mt-24"
+        >
+          <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Ready to experience this process firsthand?
+          </p>
+          <a
+            href="/contact"
+            className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-black px-10 py-5 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
+          >
+            Request Free Consultation
+            <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
