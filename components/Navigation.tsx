@@ -73,7 +73,7 @@ export function Navigation() {
       icon: Briefcase,
       label: "Offices & Corporate",
       desc: "Cleaning, admin help, micro-maintenance",
-      href: "/sectors/offices",
+      href: "/sectors/corporate",
     },
   ];
 
