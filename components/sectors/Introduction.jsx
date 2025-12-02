@@ -36,7 +36,7 @@ export function Introduction({
             </div>
 
             {/* Main Heading → smaller & clean */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a8a] leading-snug">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-slate-900">
               {heading}
             </h2>
 

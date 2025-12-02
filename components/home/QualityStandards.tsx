@@ -35,12 +35,8 @@ export function QualityStandards() {
   return (
     <section
       id="quality"
-      className="relative py-24 overflow-hidden"
-      style={{
-        background: 'url("/home/quality.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="relative py-24 overflow-hidden bg-whitesmoke"
+     
     >
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Heading */}

@@ -1,8 +1,7 @@
 // app/sectors/data.ts
 
-
 export const sectorsData = {
-  // construction 
+  // CONSTRUCTION & SHIPYARDS
   construction: {
     title: "Construction & Shipyards",
     subtitle: "Labor support, cleaning, logistics & demolition",
@@ -22,17 +21,31 @@ export const sectorsData = {
           "Full safety compliance & equipment training",
           "Flexible team sizes: 5 to 200+",
           "24/7 on-site supervision",
-
         ],
         ctaText: "Request Workforce",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
       },
-
-    ]
+      {
+        type: "highlights",
+        title: "Why Construction Leaders Trust Us",
+        variant: "construction", // orange/amber theme
+        items: [
+          { icon: "ShieldCheck", title: "100% Direct Employment", description: "No subcontractors. Full insurance & training." },
+          { icon: "Zap", title: "48-Hour Mobilization", description: "Teams of 10–200+ ready across Portugal." },
+          { title: "Dedicated Site Supervisors", description: "24/7 coordination, daily reports, zero incidents." },
+          { title: "ISO 45001 Certified", description: "PPE training, safety audits, full compliance." },
+          { title: "Flexible Contracts", description: "Daily, weekly, or project-based — you decide." },
+          { title: "Nationwide Coverage", description: "Lisbon, Porto, Algarve — we’re already there." },
+        ],
+      },
+        {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
 
-
-  // Shipbuilding 
+  // SHIPBUILDING
   shipbuilding: {
     title: "Shipbuilding",
     subtitle: "Technical support, sanding, insulation, painting",
@@ -51,17 +64,30 @@ export const sectorsData = {
           "Marine-grade sanding, insulation & painting specialists",
           "Certified technicians with safety and equipment training",
           "Skilled assistance for welders & fabrication teams",
-          "Reliable crews for maintenance, repair & new builds"
+          "Reliable crews for maintenance, repair & new builds",
         ],
         ctaText: "Request Workforce",
-        ctaHref: "/contact"
-      }
-      ,
-
-    ]
+        ctaHref: "/contact",
+      },
+      {
+        type: "highlights",
+        title: "Trusted by Portugal's Leading Shipyards",
+        variant: "shipbuilding",
+        items: [
+          { icon: "ShieldCheck", title: "Marine Safety Certified", description: "All teams trained in confined spaces & hazardous materials." },
+          { title: "Precision Surface Preparation", description: "Grit blasting, priming, and anti-fouling specialists." },
+          { title: "Insulation & Outfitting Experts", description: "Thermal, acoustic, and fire-rated insulation crews." },
+          { title: "On-Time Delivery", description: "Proven track record in refit & new-build projects." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
 
-  // Hospitality 
+  // HOSPITALITY
   hospitality: {
     title: "Hospitality",
     subtitle: "Housekeeping, stewarding, kitchen assistants",
@@ -80,16 +106,30 @@ export const sectorsData = {
           "Trained housekeeping & cleaning teams",
           "Experienced kitchen helpers and stewarding staff",
           "Polished staff for guest interaction & event support",
-          "Flexible teams available for hotels, resorts & hostels"
+          "Flexible teams available for hotels, resorts & hostels",
         ],
         ctaText: "Book Staff",
-        ctaHref: "/contact"
-      }
-      ,
-    ]
+        ctaHref: "/contact",
+      },
+      {
+        type: "highlights",
+        title: "Preferred Partner for 4 & 5-Star Properties",
+        variant: "hospitality",
+        items: [
+          { title: "5-Star Housekeeping Standards", description: "Trained in luxury protocols, attention to detail." },
+          { title: "Peak Season Ready", description: "Scale from 10 to 100+ staff in 24 hours." },
+          { title: "Stewarding & Kitchen Support", description: "Fast, hygienic, and event-ready teams." },
+          { title: "Uniformed & Professional", description: "Always on-brand, always guest-focused." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
 
-  //  Catering 
+  // CATERING
   catering: {
     title: "Catering",
     subtitle: "Kitchen helpers, washing, prep staff",
@@ -108,15 +148,30 @@ export const sectorsData = {
           "Experienced kitchen prep & dishwashing teams",
           "Staff ready for small to large events",
           "Fast, coordinated, and hygienic service",
-          "Flexible shifts for restaurants, hotels & events"
+          "Flexible shifts for restaurants, hotels & events",
         ],
         ctaText: "Hire Catering Staff",
-        ctaHref: "/contact"
-      }
-      ,
-    ]
+        ctaHref: "/contact",
+      },
+      {
+        type: "highlights",
+        title: "Powering Portugal’s Best Kitchens",
+        variant: "hospitality",
+        items: [
+          { title: "HACCP Trained Teams", description: "Food safety & hygiene certified." },
+          { title: "Event-Ready Crews", description: "From 50 to 500 guests — we scale instantly." },
+          { title: "24/7 Availability", description: "Morning prep, late-night cleanup — we’re there." },
+          { title: "Restaurant Daily Support", description: "Reliable kitchen porters & prep staff." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
-  // Healthcare & Public Entities
+
+  // HEALTHCARE & PUBLIC
   healthcare: {
     title: "Healthcare & Public Entities",
     subtitle: "Hospital support, logistics & specialized cleaning",
@@ -135,16 +190,30 @@ export const sectorsData = {
           "Hospital-grade cleaning & sanitation teams",
           "Logistics & operational assistance",
           "Admin & support staff for public entities",
-          "Teams trained in hygiene & safety protocols"
+          "Teams trained in hygiene & safety protocols",
         ],
         ctaText: "Request Healthcare Staff",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
       },
-
-
-    ]
+      {
+        type: "highlights",
+        title: "Trusted by Hospitals & Public Institutions",
+        variant: "healthcare",
+        items: [
+          { title: "Infection Control Certified", description: "Trained in hospital-grade disinfection protocols." },
+          { title: "Patient-Safe Environment", description: "Quiet, respectful, and compliant teams." },
+          { title: "Logistics & Porter Services", description: "Internal transport, waste management, supply runs." },
+          { title: "Public Sector Approved", description: "Experience with ministries, courts, and public offices." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
-  // Industrial & Logistics
+
+  // INDUSTRIAL & LOGISTICS
   industrial: {
     title: "Industrial & Logistics",
     subtitle: "Warehouse, packaging, production teams",
@@ -163,14 +232,30 @@ export const sectorsData = {
           "Warehouse & packaging teams",
           "Production-line assistants",
           "Inventory & sorting staff",
-          "Fast, safe & efficient operations"
+          "Fast, safe & efficient operations",
         ],
         ctaText: "Request Industrial Teams",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
       },
-    ]
+      {
+        type: "highlights",
+        title: "Powering Portugal’s Industrial Backbone",
+        variant: "industrial",
+        items: [
+          { title: "Forklift & Reach Truck Trained", description: "Licensed operators available on demand." },
+          { title: "High-Volume Packaging", description: "Teams that hit 10,000+ units/day." },
+          { title: "Production Line Support", description: "Assembly, quality checks, machine feeding." },
+          { title: "24/7 Warehouse Coverage", description: "Night shifts, weekends — always operational." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
+  }
+    ],
   },
-  // Offices & Corporate
+
+  // CORPORATE OFFICES
   corporate: {
     title: "Offices & Corporate",
     subtitle: "Cleaning, admin help, micro-maintenance",
@@ -189,13 +274,26 @@ export const sectorsData = {
           "Daily office cleaning teams",
           "Reception & admin support",
           "Pantry helpers & facility staff",
-          "Micro-maintenance & workplace assistance"
+          "Micro-maintenance & workplace assistance",
         ],
         ctaText: "Request Corporate Staff",
-        ctaHref: "/contact"
+        ctaHref: "/contact",
       },
-
-    ]
+      {
+        type: "highlights",
+        title: "Keeping Corporate Portugal Running Smoothly",
+        variant: "default",
+        items: [
+          { title: "Discreet & Professional", description: "Uniformed, trained, and background-checked." },
+          { title: "Daily Deep Cleaning", description: "Desks, meeting rooms, pantries — spotless." },
+          { title: "Reception & Admin Support", description: "Phone, mail, visitor management." },
+          { title: "Minor Repairs & Maintenance", description: "Lights, furniture, coffee machines — fixed fast." },
+        ],
+      },
+      {
+    type: "projects",
+    heading: "Major Construction Projects Delivered"
   }
-
+    ],
+  },
 };
