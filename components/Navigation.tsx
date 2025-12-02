@@ -165,12 +165,21 @@ export function Navigation() {
             </Link>
 
             <Link
-              href="/blogs"
+              href="/our-staff"
               className={`relative text-base font-medium group ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}
             >
-              Blogs
+              Our Staff
+              <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="/contact"
+              className={`relative text-base font-medium group ${
+                isScrolled ? 'text-gray-700' : 'text-white'
+              }`}
+            >
+              Contact
               <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
             </Link>
 
