@@ -32,6 +32,8 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMobile = () => setIsMobileMenuOpen(false);
+
   const sectors = [
     {
       icon: Hammer,
@@ -97,7 +99,6 @@ export function Navigation() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
 
-            {/* Standard Links */}
             <Link
               href="/who-we-are"
               className={`relative text-base font-medium group ${
@@ -108,7 +109,7 @@ export function Navigation() {
               <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
             </Link>
 
-            {/* Mega Menu Trigger */}
+            {/* Mega Menu */}
             <div
               className="relative"
               onMouseEnter={() => setIsMegaOpen(true)}
@@ -122,11 +123,9 @@ export function Navigation() {
                 Sectors
                 <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
 
-                {/* Hover underline */}
                 <span className="absolute left-0 bottom-[-3px] h-[4px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
               </button>
 
-              {/* Mega Menu */}
               <AnimatePresence>
                 {isMegaOpen && (
                   <motion.div
@@ -153,7 +152,6 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            {/* Other Links */}
             <Link
               href="/how-we-work"
               className={`relative text-base font-medium group ${
@@ -173,6 +171,7 @@ export function Navigation() {
               Our Staff
               <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
             </Link>
+
             <Link
               href="/contact"
               className={`relative text-base font-medium group ${
@@ -183,7 +182,6 @@ export function Navigation() {
               <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
             </Link>
 
-            {/* CTA Button */}
             <Link href="/contact">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-5 py-2">
                 Request Consultation
@@ -191,17 +189,25 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? 'text-blue-900' : 'text-white'}`} />
-            ) : (
+          {/* Mobile Menu Button – hides when menu is open */}
+          {!isMobileMenuOpen && (
+            <button
+              className="lg:hidden"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
               <Menu className={`h-6 w-6 ${isScrolled ? 'text-blue-900' : 'text-white'}`} />
-            )}
-          </button>
+            </button>
+          )}
+
+          {isMobileMenuOpen && (
+            <button
+              className="lg:hidden"
+              onClick={closeMobile}
+            >
+              <X className={`h-6 w-6 ${isScrolled ? 'text-blue-900' : 'text-white'}`} />
+            </button>
+          )}
+
         </div>
       </div>
 
@@ -210,7 +216,7 @@ export function Navigation() {
         <div className="lg:hidden bg-white border-t shadow-md">
           <div className="px-6 py-4 space-y-4">
 
-            <Link href="/who-we-are" className="block text-left">
+            <Link href="/who-we-are" onClick={closeMobile} className="block">
               Who We Are
             </Link>
 
@@ -218,11 +224,13 @@ export function Navigation() {
               <summary className="cursor-pointer font-medium text-gray-800 flex items-center">
                 Sectors <ChevronDown className="ml-2 h-4 w-4" />
               </summary>
+
               <div className="mt-3 space-y-3">
                 {sectors.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
+                    onClick={closeMobile}
                     className="flex items-center space-x-3 py-1"
                   >
                     <item.icon className="h-5 w-5 text-blue-600" />
@@ -232,15 +240,15 @@ export function Navigation() {
               </div>
             </details>
 
-            <Link href="/how-we-work" className="block text-left">
+            <Link href="/how-we-work" onClick={closeMobile} className="block">
               How We Work
             </Link>
 
-            <Link href="/blogs" className="block text-left">
-              Blogs
+            <Link href="/our-staff" onClick={closeMobile} className="block">
+              Our Staff
             </Link>
 
-            <Link href="/contact">
+            <Link href="/contact" onClick={closeMobile}>
               <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-2">
                 Request Consultation
               </Button>
