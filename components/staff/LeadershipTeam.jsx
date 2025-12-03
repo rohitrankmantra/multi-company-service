@@ -48,7 +48,7 @@ export default function LeadershipTeam() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-extrabold text-slate-900"
+          className="text-3xl md:text-5xl font-black text-slate-900"
         >
           Our <span className="text-[#1B3275]">Leadership Team</span>
         </motion.h2>
@@ -66,7 +66,7 @@ export default function LeadershipTeam() {
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Custom Arrows */}
-        <div className="absolute -top-20 right-0 flex gap-4 z-20">
+        <div className="absolute -top-[60px] right-4  sm:-top-20 sm:right-4 flex gap-4 z-20">
           <button
             className="swiper-prev bg-[#1B3275] text-white w-12 h-12 rounded-full 
                        flex items-center justify-center hover:bg-slate-900 duration-300 shadow-lg"

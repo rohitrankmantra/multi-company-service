@@ -90,7 +90,7 @@ export function WhyChooseUs() {
       Trusted by Businesses Nationwide
     </span>
 
-    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1e3b8a] leading-tight">
+    <h2 className="text-3xl md:text-5xl lg:text-5xl font-black text-[#1e3b8a] leading-tight">
       Everything You Need to Know
    
     </h2>

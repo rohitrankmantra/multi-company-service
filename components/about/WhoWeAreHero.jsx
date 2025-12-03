@@ -71,7 +71,7 @@ export function WhoWeAreHero() {
           initial={{ y: 35, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg leading-tight"
+          className="text-3xl sm:text-5xl md:text-5xl font-extrabold text-white drop-shadow-lg leading-tight"
         >
           Trusted Partners.
           <span className="block text-blue-300">

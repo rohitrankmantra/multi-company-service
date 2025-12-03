@@ -127,7 +127,7 @@ export default function WorkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight"
+            className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight"
           >
             Built for Portugal's
             <span className="block text-[#1B3275]">Most Demanding Sectors</span>
@@ -138,7 +138,7 @@ export default function WorkSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed"
+            className="text-xl md:text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed"
           >
             From consultation to execution — 100% direct-employed, EU-certified teams delivering 
             <span className="font-bold text-blue-700"> measurable results</span> across the country.
@@ -211,7 +211,7 @@ export default function WorkSection() {
           </p>
           <a
             href="/contact"
-            className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-black px-10 py-5 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
+            className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-extrabold px-6 py-5 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
           >
             Request Free Consultation
             <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

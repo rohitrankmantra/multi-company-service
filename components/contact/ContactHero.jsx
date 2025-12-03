@@ -38,10 +38,10 @@ export default function ContactHero() {
           transition={{ duration: 0.8 }}
         >
           {/* Main headline – smaller but extremely strong */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight">
             Let's Talk
           </h1>
-          <p className="mt-4 text-2xl md:text-4xl font-light text-blue-200">
+          <p className="mt-4 text-2xl md:text-2xl font-light text-blue-200">
             About Your Next Project in Portugal
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ export default function ContactHero() {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          className="mt-8 text-lg md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed"
         >
           Whether you need staffing in construction, hospitality, healthcare, logistics, or industrial sectors —
           our 100% direct-employed, EU-certified teams are ready to deliver with transparency and excellence.

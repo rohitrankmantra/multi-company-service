@@ -50,7 +50,7 @@ export function QualityStandards() {
           <span className="inline-block px-6 py-2 bg-blue-100 text-blue-700 font-semibold rounded-full shadow-sm tracking-wide mb-4">
             QUALITY STANDARDS
           </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-blue-900 mb-6">
             Quality Standards
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ export function QualityStandards() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-white mb-6">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
             Certified Excellence Across All Operations
           </h3>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">

@@ -106,7 +106,7 @@
               INDUSTRIAL EXPERTISE
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-extrabold text-white drop-shadow mb-6">
+            <h2 className="text-3xl lg:text-5xl font-black text-white drop-shadow mb-6">
               Our Sectors
             </h2>
 

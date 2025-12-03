@@ -95,7 +95,7 @@ export default function StaffIntro() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-5xl mx-auto mb-20"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl font-black text-slate-900 leading-tight">
             People First.
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1B3275] via-blue-700 to-indigo-800">
               Performance Always.
@@ -146,7 +146,7 @@ export default function StaffIntro() {
             href="/contact"
             className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-[#1B3275] to-indigo-900 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-400 overflow-hidden"
           >
-            <span className="relative z-10">Build Your Team With Us</span>
+            <span className="relative z-10">Build Your Team </span>
             <ArrowRight className="w-7 h-7 relative z-10 group-hover:translate-x-3 transition-transform duration-400" />
             <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
           </Link>

@@ -55,7 +55,7 @@ export default function Page({ params }) {
       );
 
     case "projects":
-      return <ProjectShowcase key={idx} sectorSlug={slug} heading={section.heading} />;
+      return <ProjectShowcase key={idx} sectorSlug={slug} heading={section.heading} subheading={section.subheading} variant={section.variant} />;
 
     default:
       return null;

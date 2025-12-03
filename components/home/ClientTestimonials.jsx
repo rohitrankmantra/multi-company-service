@@ -56,7 +56,7 @@ export function ClientTestimonials() {
             CLIENT TESTIMONIALS
           </span>
 
-          <h2 className="text-4xl lg:text-5xl font-bold mt-6 text-blue-900">
+          <h2 className="text-3xl lg:text-5xl font-black mt-6 text-blue-900">
             What Our Clients Say
           </h2>
         </motion.div>
