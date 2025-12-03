@@ -30,10 +30,10 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight">
             How We Work
           </h1>
-          <p className="mt-4 text-2xl md:text-4xl font-extrabold text-blue-200">
+          <p className="mt-4 text-2xl md:text-3xl font-normal text-blue-200">
             Precision. Trust. Results.
           </p>
         </motion.div>

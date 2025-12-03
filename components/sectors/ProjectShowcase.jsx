@@ -1,6 +1,9 @@
 // app/components/sectors/ProjectShowcase.jsx
-"use client"
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
 
 const sectorProjects = {
   construction: [
@@ -32,29 +35,115 @@ const sectorProjects = {
   ]
 };
 
-export function ProjectShowcase({ sectorSlug, heading = "Projects Delivered" }) {
+export function ProjectShowcase({ 
+  sectorSlug, 
+  heading = "Our Projects", 
+  subheading = "Real projects delivered with excellence"
+}) {
+  const [lightbox, setLightbox] = useState(null);
   const projects = sectorProjects[sectorSlug] || sectorProjects.construction;
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-black text-slate-900 mb-12">{heading}</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          {projects.map((p, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className="group rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
-              </div>
-              <div className="p-8 bg-gradient-to-b from-white to-slate-50">
-                <h3 className="text-2xl font-black text-slate-900">{p.title}</h3>
-                {p.client && <p className="text-slate-600 font-medium mt-1">{p.client}</p>}
-                <p className="text-slate-700 mt-4">{p.stats}</p>
-              </div>
-            </motion.div>
-          ))}
+    <>
+      <section className="relative py-16 md:py-24 bg-slate-900 text-white">
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="text-center max-w-4xl mx-auto mb-12 md:mb-20"
+          >
+            <span className="inline-block px-4 py-2 bg-blue-600/30 border border-blue-400/40 rounded-full text-blue-300 text-xs sm:text-sm font-semibold mb-5">
+              SELECTED PROJECTS
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+              {heading}
+            </h2>
+
+            <p className="mt-4 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+              {subheading}
+            </p>
+          </motion.div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {projects.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2, duration: 0.8 }}
+                onClick={() => setLightbox(p)}
+                className="group cursor-pointer"
+              >
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition duration-500 group-hover:scale-[1.02]">
+                  
+                  {/* Image */}
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition duration-700"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-lg md:text-xl font-bold mb-1">{p.title}</h3>
+                    <p className="text-blue-300 text-base font-semibold">{p.client}</p>
+                    <p className="text-blue-200/80 text-sm mt-1">{p.stats}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Mobile-Friendly Lightbox */}
+      {lightbox && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-[999] flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setLightbox(null)}
+        >
+          <div 
+            className="relative w-full max-w-2xl max-h-[90vh] bg-black rounded-2xl p-4 sm:p-6 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close */}
+            <button
+              className="absolute -top-10 right-0 text-white text-4xl sm:text-5xl font-light"
+              onClick={() => setLightbox(null)}
+            >
+              ×
+            </button>
+
+            {/* Image */}
+            <div className="w-full max-h-[55vh] overflow-hidden rounded-xl border border-white/10 mb-4 sm:mb-6">
+              <img
+                src={lightbox.image}
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Text */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{lightbox.title}</h2>
+            <p className="text-blue-300 text-base sm:text-lg font-semibold mb-2">
+              Client: {lightbox.client}
+            </p>
+            <p className="text-blue-200/80 text-sm sm:text-base">{lightbox.stats}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

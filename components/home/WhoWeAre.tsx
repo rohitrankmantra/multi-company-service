@@ -82,7 +82,7 @@ export function WhoWeAre() {
             ABOUT OUR COMPANY
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-extrabold text-blue-900 drop-shadow-sm mb-4 tracking-tight">
+          <h2 className="text-3xl lg:text-5xl font-black text-blue-900 drop-shadow-sm mb-4 tracking-tight">
             Who We Are
           </h2>
 

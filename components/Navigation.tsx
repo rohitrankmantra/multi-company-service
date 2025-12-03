@@ -215,6 +215,9 @@ export function Navigation() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t shadow-md">
           <div className="px-6 py-4 space-y-4">
+              <Link href="/" onClick={closeMobile} className="block">
+              Home
+            </Link>
 
             <Link href="/who-we-are" onClick={closeMobile} className="block">
               Who We Are
@@ -247,12 +250,11 @@ export function Navigation() {
             <Link href="/our-staff" onClick={closeMobile} className="block">
               Our Staff
             </Link>
-
-            <Link href="/contact" onClick={closeMobile}>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-2">
-                Request Consultation
-              </Button>
+             <Link href="/contact" onClick={closeMobile} className="block">
+              Contact 
             </Link>
+
+         
 
           </div>
         </div>

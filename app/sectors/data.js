@@ -38,10 +38,11 @@ export const sectorsData = {
           { title: "Nationwide Coverage", description: "Lisbon, Porto, Algarve — we’re already there." },
         ],
       },
-        {
-    type: "projects",
-    heading: "Major Construction Projects Delivered"
-  }
+   {
+      type: "projects",
+      heading: "Our Construction Projects",
+      subheading: "Major infrastructure & building projects delivered on time"
+    }
     ],
   },
 
@@ -80,10 +81,11 @@ export const sectorsData = {
           { title: "On-Time Delivery", description: "Proven track record in refit & new-build projects." },
         ],
       },
-      {
-    type: "projects",
-    heading: "Major Construction Projects Delivered"
-  }
+ {
+  type: "projects",
+  heading: "Our Shipyard Projects",
+  subheading: "Refits, new builds & marine works with precision"
+}
     ],
   },
 
@@ -122,10 +124,11 @@ export const sectorsData = {
           { title: "Uniformed & Professional", description: "Always on-brand, always guest-focused." },
         ],
       },
-      {
-    type: "projects",
-    heading: "Major Construction Projects Delivered"
-  }
+  {
+  type: "projects",
+  heading: "Hotels & Resorts We Serve",
+  subheading: "5-star properties powered by our professional teams"
+},
     ],
   },
 
@@ -166,7 +169,8 @@ export const sectorsData = {
       },
       {
     type: "projects",
-    heading: "Major Construction Projects Delivered"
+    heading: "Catering Events Supported",
+    subheading: "From intimate gatherings to large-scale banquets"
   }
     ],
   },
@@ -208,7 +212,8 @@ export const sectorsData = {
       },
       {
     type: "projects",
-    heading: "Major Construction Projects Delivered"
+    heading: "Healthcare & Public Sector Projects",
+    subheading: "Supporting hospitals and government facilities across Portugal"
   }
     ],
   },
@@ -250,7 +255,8 @@ export const sectorsData = {
       },
       {
     type: "projects",
-    heading: "Major Construction Projects Delivered"
+    heading: "Industrial & Logistics Projects",
+    subheading: "Supporting warehouses and production facilities across Portugal"
   }
     ],
   },
@@ -292,7 +298,8 @@ export const sectorsData = {
       },
       {
     type: "projects",
-    heading: "Major Construction Projects Delivered"
+    heading: "Corporate Office Projects",
+    subheading: "Supporting office environments across Portugal"
   }
     ],
   },

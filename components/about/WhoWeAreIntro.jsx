@@ -53,7 +53,7 @@ export function WhoWeAreIntro() {
             </motion.div>
 
             {/* Main Heading */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
               Delivering{" "}
               <span className="relative">
                 <span className="relative z-10">Operational</span>

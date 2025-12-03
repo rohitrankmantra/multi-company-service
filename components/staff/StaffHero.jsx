@@ -5,7 +5,7 @@ import { Users, ShieldCheck, GraduationCap } from "lucide-react";
 
 export default function StaffHero() {
   return (
-    <section className="relative w-full py-20 sm:py-28 md:py-40 text-center overflow-hidden">
+    <section className="relative w-full py-32 sm:py-28 md:py-40 text-center overflow-hidden">
 
       {/* Background */}
       <div
@@ -31,7 +31,7 @@ export default function StaffHero() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
           Professionally Trained,
           <span className="block text-[#80A8FF] mt-1">
             Directly Employed Teams
@@ -39,34 +39,36 @@ export default function StaffHero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10 px-2">
+        <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-10 px-2">
           Our workforce is fully hired, trained and supervised by Company B.
           No subcontractors, no temporary agencies — only reliable, qualified
           and professionally managed teams across Portugal.
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto mt-10 sm:mt-14">
+        {/* Stats */}
+<div className="grid grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto mt-10 sm:mt-14">
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
-            <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
-            <p className="text-2xl sm:text-3xl font-bold text-white">1200+</p>
-            <p className="text-gray-200 text-sm font-medium">Active Employees</p>
-          </div>
+  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
+    <Users className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
+    <p className="text-xl sm:text-2xl sm:font-black text-white">1200+</p>
+    <p className="text-gray-200 text-sm font-medium">Active Employees</p>
+  </div>
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
-            <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
-            <p className="text-2xl sm:text-3xl font-bold text-white">Internal</p>
-            <p className="text-gray-200 text-sm font-medium">Training Academy</p>
-          </div>
+  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
+    <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
+    <p className="text-xl sm:text-2xl sm:font-black text-white">Internal</p>
+    <p className="text-gray-200 text-sm font-medium">Training Academy</p>
+  </div>
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
-            <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
-            <p className="text-2xl sm:text-3xl font-bold text-white">100%</p>
-            <p className="text-gray-200 text-sm font-medium">Direct Employment</p>
-          </div>
+  <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-md border border-white/10">
+    <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-[#80A8FF] mx-auto mb-3" />
+    <p className="text-xl sm:text-2xl sm:font-black text-white">100%</p>
+    <p className="text-gray-200 text-sm font-medium">Direct Employment</p>
+  </div>
 
-        </div>
+</div>
+
       </div>
     </section>
   );

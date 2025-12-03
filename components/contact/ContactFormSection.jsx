@@ -114,7 +114,7 @@ export default function ContactFormSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight"
+            className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight"
           >
             Start a Conversation
           </motion.h2>
@@ -124,7 +124,7 @@ export default function ContactFormSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto font-light"
+            className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto font-light"
           >
             Tell us about your project. Our team responds in under <span className="font-bold text-blue-700">2 hours</span> — 
             across all of Portugal.
@@ -274,7 +274,7 @@ export default function ContactFormSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-black py-5 px-8 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70"
+                    className="w-full bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-black py-5 px-8 rounded-2xl sm:text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70"
                   >
                     {isSubmitting ? "Sending Message..." : (
                       <>

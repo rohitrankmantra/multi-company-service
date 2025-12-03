@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const slides = [
   {
@@ -31,7 +30,7 @@ const slides = [
 
 // 👉 Slide-only animation (no fade)
 const variants = {
-  enter: (direction: number) => ({
+  enter: (direction) => ({
     x: direction > 0 ? 300 : -300,
     scale: 0.98,
   }),
@@ -39,7 +38,7 @@ const variants = {
     x: 0,
     scale: 1,
   },
-  exit: (direction: number) => ({
+  exit: (direction) => ({
     x: direction < 0 ? 300 : -300,
     scale: 0.98,
   }),
@@ -47,13 +46,12 @@ const variants = {
 
 export function HeroSection() {
   const [[currentSlide, direction], setCurrentSlide] = useState([0, 0]);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  const paginate = (newDirection: number) => {
+  const paginate = (newDirection) => {
     setCurrentSlide(([prevSlide]) => {
-      const newIndex =
-        (prevSlide + newDirection + slides.length) % slides.length;
+      const newIndex = (prevSlide + newDirection + slides.length) % slides.length;
       return [newIndex, newDirection];
     });
   };
@@ -65,12 +63,13 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!isPaused) resetTimer();
+
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [isPaused]);
 
-  const onDotClick = (index: number) => {
+  const onDotClick = (index) => {
     const newDirection = index > currentSlide ? 1 : -1;
     setCurrentSlide([index, newDirection]);
     resetTimer();
@@ -92,7 +91,7 @@ export function HeroSection() {
         {slides.map((slide, index) =>
           index === currentSlide ? (
             <motion.div
-              key={index}
+              key={`slide-${index}`}
               className="absolute inset-0 z-20"
               custom={direction}
               variants={variants}
@@ -125,6 +124,7 @@ export function HeroSection() {
                     <stop offset="100%" stopColor="#2563EB" stopOpacity="0.15" />
                   </linearGradient>
                 </defs>
+
                 <circle cx="400" cy="300" r="350" fill="url(#grad1)">
                   <animate
                     attributeName="r"
@@ -142,41 +142,41 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-30 flex h-full items-center px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
         <div className="max-w-3xl text-white drop-shadow-lg">
-  <motion.h1
-  key={`title-${currentSlide}`}
-  initial={{ y: 20, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  exit={{ y: -20, opacity: 0 }}
-  transition={{ duration: 0.5 }}
-  className="text-5xl md:text-6xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-wide whitespace-pre-line"
->
-  {(() => {
-    const words = slides[currentSlide].title.replace("\n", " ").split(" ");
-    const firstWord = words[0];
-    const restWords = words.slice(1).join(" ");
+          {/* Title */}
+          <motion.h1
+            key={`title-${currentSlide}`}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-5xl lg:text-5xl font-black leading-tight mb-6 tracking-wide whitespace-pre-line"
+          >
+            {(() => {
+              const words = slides[currentSlide].title.replace('\n', ' ').split(' ');
+              const firstWord = words[0];
+              const restWords = words.slice(1).join(' ');
+              return (
+                <>
+                  <span className="block">{firstWord}</span>
+                  <span className="block">{restWords}</span>
+                </>
+              );
+            })()}
+          </motion.h1>
 
-    return (
-      <>
-        <span className="block">{firstWord}</span>
-        <span className="block">{restWords}</span>
-      </>
-    );
-  })()}
-</motion.h1>
-
-
-
+          {/* Subtitle */}
           <motion.p
             key={`subtitle-${currentSlide}`}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-xl md:text-2xl text-blue-200 mb-8 tracking-wide drop-shadow"
+            className="text-lg md:text-2xl text-blue-200 mb-8 tracking-wide drop-shadow"
           >
             {slides[currentSlide].subtitle}
           </motion.p>
 
+          {/* Points */}
           <motion.ul
             key={`points-${currentSlide}`}
             initial={{ opacity: 0 }}
@@ -192,7 +192,7 @@ export function HeroSection() {
             ].map((point) => (
               <li
                 key={point}
-                className="flex items-center space-x-4 text-lg md:text-xl font-medium"
+                className="flex items-center space-x-4 text-base md:text-xl font-medium"
               >
                 <CheckCircle2 className="h-7 w-7 text-blue-400 flex-shrink-0" />
                 <span>{point}</span>
@@ -200,21 +200,16 @@ export function HeroSection() {
             ))}
           </motion.ul>
 
-      <motion.button
-  onClick={scrollToContact}
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.98 }}
-  className="group bg-white text-blue-900 px-10 py-4 text-lg font-semibold 
-             rounded-xl shadow-lg flex items-center gap-3 transition-all 
-             duration-300 hover:bg-blue-50"
->
-  Request a Consultation
-
-  <ChevronRight 
-    className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" 
-  />
-</motion.button>
-
+          {/* Button */}
+          <motion.button
+            onClick={scrollToContact}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="group bg-white text-blue-900 px-6 py-4 sm:px-10 sm:py-4 text-base sm:text-lg font-semibold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-300 hover:bg-blue-50"
+          >
+            Request a Consultation
+            <ChevronRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+          </motion.button>
         </div>
       </div>
 

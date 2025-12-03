@@ -61,7 +61,7 @@ export function HowWeWork() {
         <span className="inline-block px-4 py-2 text-blue-600 bg-blue-100/30 rounded-full font-semibold tracking-wide mb-4">
           OUR PROCESS
         </span>
-        <h2 className="text-4xl lg:text-5xl font-extrabold text-blue-900 drop-shadow-md mb-4">
+        <h2 className="text-3xl lg:text-5xl font-black text-blue-900 drop-shadow-md mb-4">
           How We Work
         </h2>
         <div className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"></div>

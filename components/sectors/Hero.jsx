@@ -65,7 +65,7 @@ export function Hero({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.9 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight"
+            className="text-5xl md:text-5xl lg:text-7xl font-black text-white leading-tight tracking-tight"
           >
             {title.split(' ').map((word, i) => (
               <span

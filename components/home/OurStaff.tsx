@@ -54,7 +54,7 @@ export function OurStaff() {
           <span className="inline-block px-4 py-2 text-blue-400 bg-blue-100/20 rounded-full font-semibold tracking-wide mb-4">
             OUR TEAM
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md mb-4">
+          <h2 className="text-3xl lg:text-5xl font-black text-white drop-shadow-md mb-4">
             Our Staff
           </h2>
           <div className="h-1 w-24 bg-blue-400 mx-auto rounded-full mb-6"></div>
@@ -92,20 +92,20 @@ export function OurStaff() {
         {/* Stats Section */}
         <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-12 border border-white/20 shadow-lg">
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Why Our Team Makes the Difference
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-blue-400 mb-2">100%</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">100%</div>
                 <p className="text-blue-100">Direct Employment</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-blue-400 mb-2">24/7</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
                 <p className="text-blue-100">Supervision Available</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-blue-400 mb-2">EU</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">EU</div>
                 <p className="text-blue-100">Quality Standards</p>
               </div>
             </div>
