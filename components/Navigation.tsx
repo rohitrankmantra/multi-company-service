@@ -98,6 +98,15 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
+                  <Link
+              href="/"
+              className={`relative text-base font-medium group ${
+                isScrolled ? 'text-gray-700' : 'text-white'
+              }`}
+            >
+              Home
+              <span className="absolute left-0 bottom-[-3px] h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+            </Link>
 
             <Link
               href="/who-we-are"
@@ -183,7 +192,7 @@ export function Navigation() {
             </Link>
 
             <Link href="/contact">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-5 py-2">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-4">
                 Request Consultation
               </Button>
             </Link>
