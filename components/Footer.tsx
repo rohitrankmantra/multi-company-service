@@ -1,78 +1,175 @@
 'use client';
 
-import { Building2, Mail, Phone, MapPin } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+} from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <Building2 className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold">Company B</span>
-            </div>
-            <p className="text-blue-100 leading-relaxed">
-              Integrated professional services for companies, institutions, and infrastructures throughout Portugal.
+    <footer className="relative overflow-hidden bg-gray-50/50 text-slate-800">
+      {/* Subtle background blobs */}
+      <div className="pointer-events-none absolute inset-0 opacity-10">
+        <motion.div
+          className="absolute top-1/4 left-1/4 h-72 w-72 rounded-full bg-slate-300 blur-3xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-slate-200 blur-3xl"
+          animate={{ scale: [1, 1.05, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+      </div>
+
+      {/* Upper footer */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+          {/* Logo + About */}
+          <motion.div
+            className="space-y-6 w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/" className="inline-flex">
+              <motion.img
+                src="/footerlogo.png"
+                alt="Elite Work Solutions"
+                className="md:w-[80%] w-[70%] object-cover"
+                whileHover={{ scale: 1.05 }}
+              />
+            </Link>
+
+            <p className="text-sm leading-relaxed text-slate-600 relative md:top-[-40px]  ">
+              Integrated professional services for companies, institutions, and
+              infrastructures throughout Portugal.
             </p>
-          </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-6">Our Sectors</h3>
-            <ul className="space-y-3 text-blue-100">
-              <li>Construction & Shipyards</li>
-              <li>Shipbuilding</li>
-              <li>Hospitality</li>
-              <li>Catering</li>
-              <li>Healthcare & Public</li>
-              <li>Industrial & Logistics</li>
-              <li>Offices & Corporate</li>
-            </ul>
-          </div>
+            <div className="flex gap-4 relative md:top-[-40px] pt-0 ">
+              {[
+                { href: 'https://facebook.com/companyb', icon: Facebook },
+                { href: 'https://twitter.com/companyb', icon: Twitter },
+                { href: 'https://linkedin.com/company/companyb', icon: Linkedin },
+              ].map(({ href, icon: Icon }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:scale-110 hover:bg-slate-200 hover:text-slate-900"
+                >
+                  <Icon size={18} />
+                </Link>
+              ))}
+            </div>
+          </motion.div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-6">Company</h3>
-            <ul className="space-y-3 text-blue-100">
-              <li>Who We Are</li>
-              <li>How We Work</li>
-              <li>Our Staff</li>
-              <li>Quality Standards</li>
-            </ul>
-          </div>
+          {/* Our Sectors */}
+          <FooterColumn
+            title="Our Sectors"
+            items={[
+              { label: 'Construction & Shipyards', href: '/sectors/construction' },
+              { label: 'Shipbuilding', href: '/sectors/shipbuilding' },
+              { label: 'Hospitality', href: '/sectors/hospitality' },
+              { label: 'Catering', href: '/sectors/catering' },
+              { label: 'Healthcare & Public Entities', href: '/sectors/healthcare' },
+              { label: 'Industrial & Logistics', href: '/sectors/industrial' },
+              { label: 'Offices & Corporate', href: '/sectors/corporate' },
+            ]}
+          />
 
-          <div>
-            <h3 className="text-lg font-bold mb-6">Contact</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
-                <span className="text-blue-100">+351 XXX XXX XXX</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
-                <span className="text-blue-100">contact@companyb.pt</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
-                <span className="text-blue-100">Portugal</span>
+          {/* Company */}
+          <FooterColumn
+            title="Company"
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Who We Are', href: '/who-we-are' },
+              { label: 'How We Work', href: '/how-we-work' },
+              { label: 'Our Staff', href: '/our-staff' },
+              { label: 'Contact', href: '/contact' },
+            ]}
+          />
+
+          {/* Contact */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold">Contact</h3>
+
+            <div className="space-y-4 text-sm text-slate-600">
+              <a href="tel:+351XXXXXXXX" className="flex items-center gap-3 hover:text-slate-900">
+                <Phone size={18} />
+                +351 XXX XXX XXX
+              </a>
+
+              <a href="mailto:contact@companyb.pt" className="flex items-center gap-3 hover:text-slate-900">
+                <Mail size={18} />
+                contact@companyb.pt
+              </a>
+
+              <div className="flex items-center gap-3">
+                <MapPin size={18} />
+                Portugal
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-blue-100 text-sm">
-              © {currentYear} Company B. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm text-blue-100">
-              <button className="hover:text-white transition-colors">Privacy Policy</button>
-              <button className="hover:text-white transition-colors">Terms of Service</button>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-slate-200 bg-slate-900 py-6 text-center text-sm text-slate-300">
+        © {currentYear} Company B. All rights reserved. Designed & Developed by{' '}
+        <Link
+          href="https://rankmantra.com"
+          target="_blank"
+          className="font-medium text-slate-100 hover:underline"
+        >
+          Rankmantra
+        </Link>
+        .
+      </div>
     </footer>
+  );
+}
+
+/* Reusable column */
+function FooterColumn({
+  title,
+  items,
+}: {
+  title: string;
+  items: { label: string; href: string }[];
+}) {
+  return (
+    <motion.div
+      className="space-y-6"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h3 className="text-lg font-semibold">{title}</h3>
+
+      <ul className="space-y-3 text-sm text-slate-600">
+        {items.map((item) => (
+          <li key={item.href}>
+            <Link href={item.href} className="hover:text-slate-900 transition">
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
   );
 }

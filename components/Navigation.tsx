@@ -85,20 +85,22 @@ export function Navigation() {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <Building2 className={`h-8 w-8 ${isScrolled ? 'text-blue-900' : 'text-white'}`} />
-            <span className={`text-xl font-bold ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
-              Company B
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="Elite Work Solutions" 
+              className={`w-[40%] transition-all duration-300 `} 
+            />
+          
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-10">
-                  <Link
+          <div className="hidden lg:flex items-center space-x-12 ">
+            <Link
               href="/"
               className={`relative text-base font-medium group ${
                 isScrolled ? 'text-gray-700' : 'text-white'
@@ -138,24 +140,63 @@ export function Navigation() {
               <AnimatePresence>
                 {isMegaOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    className="absolute left-[-150px] mt-4 w-[780px] bg-white shadow-xl rounded-xl p-8 grid grid-cols-2 gap-6 border border-gray-100"
+                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute left-[-150px] mt-4 w-[780px] bg-gradient-to-br from-white to-blue-50 shadow-2xl rounded-2xl p-6 overflow-hidden border border-blue-100"
                   >
-                    {sectors.map((item) => (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="flex items-start space-x-4 p-4 rounded-lg hover:bg-blue-50 transition"
-                      >
-                        <item.icon className="h-7 w-7 text-blue-600" />
-                        <div>
-                          <p className="font-semibold text-gray-900">{item.label}</p>
-                          <p className="text-sm text-gray-600 leading-tight">{item.desc}</p>
-                        </div>
-                      </Link>
-                    ))}
+                    {/* Decorative top border with gradient */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500"></div>
+                    
+                    <div className="grid grid-cols-2 gap-6 pt-4">
+                      {sectors.map((item, index) => (
+                        <motion.div
+                          key={item.label}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
+                          whileHover={{ 
+                            scale: 1.02, 
+                            y: -2,
+                            transition: { duration: 0.15 }
+                          }}
+                        >
+                          <Link
+                            href={item.href}
+                            className="group relative flex items-start space-x-4 p-5 rounded-xl bg-white/80 backdrop-blur-sm hover:bg-blue-50/80 transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg overflow-hidden"
+                          >
+                            {/* Icon with glow effect on hover */}
+                            <motion.div 
+                              className="flex-shrink-0"
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              <item.icon className="h-8 w-8 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                            </motion.div>
+                            
+                            <div className="min-w-0 flex-1">
+                              <p className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors text-base leading-tight">
+                                {item.label}
+                              </p>
+                              <p className="text-sm text-gray-600 leading-tight mt-1">
+                                {item.desc}
+                              </p>
+                            </div>
+                            
+                            {/* Subtle arrow indicator */}
+                            <motion.div 
+                              className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                              initial={{ x: 10 }}
+                              animate={{ x: 0 }}
+                            >
+                              <ChevronDown className="h-4 w-4 text-gray-400 rotate-90" />
+                            </motion.div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                  
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -224,7 +265,7 @@ export function Navigation() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t shadow-md">
           <div className="px-6 py-4 space-y-4">
-              <Link href="/" onClick={closeMobile} className="block">
+            <Link href="/" onClick={closeMobile} className="block">
               Home
             </Link>
 
@@ -259,15 +300,13 @@ export function Navigation() {
             <Link href="/our-staff" onClick={closeMobile} className="block">
               Our Staff
             </Link>
-             <Link href="/contact" onClick={closeMobile} className="block">
+            <Link href="/contact" onClick={closeMobile} className="block">
               Contact 
             </Link>
-
-         
-
           </div>
         </div>
       )}
     </nav>
   );
 }
+
