@@ -10,8 +10,11 @@ import { Navigation } from '@/components/Navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Company B - Integrated Professional Services Throughout Portugal',
+  title: 'Elite Work Solutions - Integrated Professional Services Throughout Portugal',
   description: 'Multi-service company providing operational, technical, and management services for construction, hospitality, healthcare, industrial, and corporate sectors.',
+  icons:{
+    icon : `favicon.png`
+  }
 };
 
 export default function RootLayout({
