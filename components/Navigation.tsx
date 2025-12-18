@@ -81,8 +81,8 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 w-full z-50 transition-all duration-300  ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white'
       }`}
     >
       <div className="max-w mx-auto px-6 lg:px-8">
@@ -103,7 +103,7 @@ export function Navigation() {
             <Link
               href="/"
               className={`relative text-base font-medium group ${
-                isScrolled ? 'text-gray-700' : 'text-white'
+                isScrolled ? 'text-gray-700' : 'text-gray-700'
               }`}
             >
               Home
@@ -113,7 +113,7 @@ export function Navigation() {
             <Link
               href="/who-we-are"
               className={`relative text-base font-medium group ${
-                isScrolled ? 'text-gray-700' : 'text-white'
+                isScrolled ? 'text-gray-700' : 'text-gray-700'
               }`}
             >
               Who We Are
@@ -128,7 +128,7 @@ export function Navigation() {
             >
               <button
                 className={`relative flex items-center text-base font-medium group ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
+                  isScrolled ? 'text-gray-700' : 'text-gray-700'
                 }`}
               >
                 Sectors
@@ -205,7 +205,7 @@ export function Navigation() {
             <Link
               href="/how-we-work"
               className={`relative text-base font-medium group ${
-                isScrolled ? 'text-gray-700' : 'text-white'
+                isScrolled ? 'text-gray-700' : 'text-gray-700'
               }`}
             >
               How We Work
@@ -215,7 +215,7 @@ export function Navigation() {
             <Link
               href="/our-staff"
               className={`relative text-base font-medium group ${
-                isScrolled ? 'text-gray-700' : 'text-white'
+                isScrolled ? 'text-gray-700' : 'text-gray-700'
               }`}
             >
               Our Staff
@@ -225,7 +225,7 @@ export function Navigation() {
             <Link
               href="/contact"
               className={`relative text-base font-medium group ${
-                isScrolled ? 'text-gray-700' : 'text-white'
+                isScrolled ? 'text-gray-700' : 'text-gray-700'
               }`}
             >
               Contact
@@ -245,7 +245,7 @@ export function Navigation() {
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(true)}
             >
-              <Menu className={`h-6 w-6 ${isScrolled ? 'text-blue-900' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 ${isScrolled ? 'text-blue-900' : 'text-gray-700'}`} />
             </button>
           )}
 
