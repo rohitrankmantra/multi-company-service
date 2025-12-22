@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import FloatingButtons from './../components/ui/FloatingButtons.jsx';
 import { Footer } from '@/components/Footer';
 import { Navigation } from '@/components/Navigation';
+import GoogleTranslate from './../components/GoogleTranslate';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -14,7 +15,10 @@ export const metadata: Metadata = {
   description: 'Multi-service company providing operational, technical, and management services for construction, hospitality, healthcare, industrial, and corporate sectors.',
   icons:{
     icon : `favicon.png`
-  }
+  },
+  //  other: {
+  //   google: "notranslate",
+  // },
 };
 
 export default function RootLayout({
@@ -29,6 +33,7 @@ export default function RootLayout({
         {children}
         <Footer/>
         <FloatingButtons/>
+        <GoogleTranslate/>
         <Toaster />
       </body>
     </html>
