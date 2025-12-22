@@ -128,29 +128,14 @@ export default function StaffIntro() {
                 <item.icon className={`w-10 h-10 ${item.color}`} />
               </div>
 
-              <h3 className="text-2xl font-black text-slate-900 mb-3">{item.label}</h3>
+              <h3 className="text-xl font-black text-slate-900 mb-3">{item.label}</h3>
               <p className="text-slate-600 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Elegant CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-24"
-        >
-          <Link
-            href="/contact"
-            className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-[#1B3275] to-indigo-900 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-400 overflow-hidden"
-          >
-            <span className="relative z-10">Build Your Team </span>
-            <ArrowRight className="w-7 h-7 relative z-10 group-hover:translate-x-3 transition-transform duration-400" />
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-          </Link>
-        </motion.div>
+        
       </div>
     </section>
   );

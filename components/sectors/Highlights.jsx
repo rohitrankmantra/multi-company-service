@@ -57,7 +57,7 @@ export function Highlights({
             {title}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-black text-slate-900 leading-tight">
             Why Clients Choose Us
           </h2>
         </motion.div>
@@ -82,11 +82,11 @@ export function Highlights({
                 
                 {/* Icon */}
                 <div className={`inline-flex p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${gradient} shadow-lg mb-5 sm:mb-6 group-hover:scale-110 transition-transform duration-400`}>
-                  <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-md" />
+                  <CheckCircle2 className="w-8 h-8  text-white drop-shadow-md" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl md:text-2xl font-black text-slate-900 mb-2 sm:mb-3">
+                <h3 className="text-lg sm:text-xl md:text-xl font-black text-gray-700 mb-2 sm:mb-3">
                   {item.title || item}
                 </h3>
 

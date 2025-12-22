@@ -41,7 +41,7 @@ export default function ContactHero() {
             Let’s Talk
           </h1>
           <p className="mt-4 text-lg font-light text-blue-200 sm:text-xl md:text-2xl">
-            About Your Next Project in Portugal
+            About Your Next Project in World.
           </p>
         </motion.div>
 
@@ -66,15 +66,15 @@ export default function ContactHero() {
         >
           <div className="flex items-center gap-3 text-sm text-gray-200 sm:text-base">
             <Phone className="h-5 w-5 text-blue-400" />
-            <span>+351 911 234 567</span>
+            <span>+356 7960 5019</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-200 sm:text-base">
             <Mail className="h-5 w-5 text-blue-400" />
-            <span>info@yourcompany.pt</span>
+            <span>solutions.elitework@gmail.com</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-200 sm:text-base">
             <MapPin className="h-5 w-5 text-blue-400" />
-            <span>Porto & Lisbon, Portugal</span>
+            <span>Oporto, Portugal</span>
           </div>
         </motion.div>
 
@@ -106,7 +106,7 @@ export default function ContactHero() {
           </a>
 
           <a
-            href="tel:+351911234567"
+            href="tel:+35679605019"
             className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20 sm:w-auto sm:px-10 sm:py-5"
           >
             <Phone className="h-5 w-5" />

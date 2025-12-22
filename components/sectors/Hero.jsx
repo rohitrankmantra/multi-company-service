@@ -43,7 +43,7 @@ export function Hero({
       {/* Dynamic Gradient Overlay */}
       <motion.div
         style={{ opacity }}
-        className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-indigo-900/60"
+        className="absolute inset-0 bg-black/40 "
       />
 
       {/* Optional Floating Particles / Blobs */}
@@ -65,7 +65,7 @@ export function Hero({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.9 }}
-            className="text-5xl md:text-5xl lg:text-7xl font-black text-white leading-tight tracking-tight"
+            className="text-5xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight"
           >
             {title.split(' ').map((word, i) => (
               <span
@@ -89,7 +89,7 @@ export function Hero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-xl md:text-2xl text-blue-100/90 font-light max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-xl text-blue-100/90 font-light max-w-3xl mx-auto leading-relaxed"
           >
             {subtitle}
           </motion.p>

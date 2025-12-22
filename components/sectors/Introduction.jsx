@@ -37,7 +37,7 @@ export function Introduction({
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl font-black text-slate-900 leading-tight">
               {heading}
             </h2>
 
