@@ -10,8 +10,8 @@ export default function GoogleTranslate() {
 
   const languages = [
     { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
     { code: "it", name: "Italiano", flag: "🇮🇹" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
   ];
 
   // 🔹 Lazy-load Google Translate
