@@ -123,15 +123,15 @@ export function ContactSection() {
                 {[{
                   icon: Phone,
                   title: "Phone",
-                  value: "+351 XXX XXX XXX"
+                  value: "+356 7960 5019"
                 },{
                   icon: Mail,
                   title: "Email",
-                  value: "contact@companyb.pt"
+                  value: "solutions.elitework@gmail.com"
                 },{
                   icon: MapPin,
                   title: "Location",
-                  value: "Serving all of Portugal"
+                  value: "Serving All over the world"
                 }].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
