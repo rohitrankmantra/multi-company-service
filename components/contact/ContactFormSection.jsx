@@ -145,9 +145,9 @@ export default function ContactFormSection() {
               <h3 className="text-2xl font-bold text-slate-900 mb-8">Contact Information</h3>
               <div className="space-y-7">
                 {[
-                  { icon: Phone, label: "Phone", value: "+351 911 234 567", href: "tel:+351911234567" },
-                  { icon: Mail, label: "Email", value: "info@companyb.pt", href: "mailto:info@companyb.pt" },
-                  { icon: MapPin, label: "Coverage", value: "Porto • Lisbon • Nationwide Portugal" },
+                  { icon: Phone, label: "Phone", value: "+356 7960 5019", href: "tel:+35679605019" },
+                  { icon: Mail, label: "Email", value: "solutions.elitework@gmail.com", href: "solutions.elitework@gmail.com" },
+                  { icon: MapPin, label: "Location", value: "Oporto, Portugal" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 group">
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">

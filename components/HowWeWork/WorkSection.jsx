@@ -14,44 +14,44 @@ export default function WorkSection() {
       id: 1,
       title: "Customer Needs Analysis",
       description:
-        "We assess your sector-specific goals—whether construction, hospitality, or healthcare—and tailor solutions to Portugal's unique operational landscape. Direct insights ensure 100% alignment with EU standards from day one.",
+        "We assess your sector-specific goals—whether construction, hospitality, healthcare, or industrial services—and tailor solutions to local, regional, or international operational environments. Our approach ensures full compliance with EU and global standards from day one.",
       icon: <HiOutlineChat className="w-8 h-8 text-white" />,
     },
     {
       id: 2,
       title: "Customized Operational Proposal",
       description:
-        "Our proposals blend efficiency with compliance, drawing from in-house expertise across industries. We outline clear, actionable steps for seamless integration, minimizing disruptions while maximizing ROI.",
+        "Our proposals blend efficiency with compliance, drawing from in-house expertise across multiple industries and international markets. We outline clear, actionable steps for seamless integration, minimizing disruptions while maximizing ROI.",
       icon: <HiOutlineSearch className="w-8 h-8 text-white" />,
     },
     {
       id: 3,
       title: "Internal Team Assignment",
       description:
-        "100% direct-employed teams, rigorously trained and vetted, are assigned based on your project's demands. This guarantees specialized skills, cultural fit, and unwavering reliability for every contract.",
+        "100% direct-employed teams, rigorously trained and vetted, are assigned based on your project's demands—locally or internationally. This guarantees specialized skills, cultural alignment, and unwavering reliability across all regions of operation.",
       icon: <HiOutlineUserGroup className="w-8 h-8 text-white" />,
     },
     {
       id: 4,
       title: "Constant Supervision",
       description:
-        "24/7 oversight by certified supervisors ensures real-time adjustments and adherence to safety/performance KPIs. Proactive monitoring keeps projects on track, reducing risks in dynamic sectors like logistics or shipbuilding.",
+        "24/7 oversight by certified supervisors ensures real-time adjustments and strict adherence to safety and performance KPIs. Proactive monitoring keeps projects on track across dynamic global environments, including logistics, shipbuilding, and industrial operations.",
       icon: <HiOutlineEye className="w-8 h-8 text-white" />,
     },
     {
       id: 5,
       title: "Monthly Reports & Quality Control",
       description:
-        "Transparent reports track milestones, KPIs, and improvements, backed by ISO-compliant audits. This fosters ongoing excellence, client confidence, and sustained partnerships across Portugal.",
+        "Transparent reports track milestones, KPIs, and continuous improvements, backed by ISO-compliant audits. This fosters operational excellence, client confidence, and long-term partnerships across international markets.",
       icon: <HiOutlineDocumentReport className="w-8 h-8 text-white" />,
     },
   ];
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-white">
-      {/* PREMIUM BACKGROUND PATTERN - Layered & Animated */}
+      {/* PREMIUM BACKGROUND PATTERN */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* 1. Subtle Wave Pattern (Coastal Portugal Vibe) */}
+        {/* Wave Pattern */}
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
@@ -70,7 +70,7 @@ export default function WorkSection() {
           }}
         />
 
-        {/* 2. Ultra-faint Grid (Structure & Precision) */}
+        {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -83,28 +83,19 @@ export default function WorkSection() {
           }}
         />
 
-        {/* 3. Animated Floating Orbs (Premium Movement) */}
+        {/* Floating Orbs */}
         <motion.div
-          animate={{
-            y: [0, -40, 0],
-            x: [0, 30, 0],
-          }}
+          animate={{ y: [0, -40, 0], x: [0, 30, 0] }}
           transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
           className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-600/5 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{
-            y: [0, 40, 0],
-            x: [0, -40, 0],
-          }}
+          animate={{ y: [0, 40, 0], x: [0, -40, 0] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-32 right-20 w-80 h-80 bg-gradient-to-tl from-cyan-400/10 to-blue-600/5 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.03, 0.06, 0.03],
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.03, 0.06, 0.03] }}
           transition={{ duration: 18, repeat: Infinity }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-400/5 via-transparent to-transparent rounded-full blur-3xl"
         />
@@ -129,8 +120,10 @@ export default function WorkSection() {
             transition={{ delay: 0.2 }}
             className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight"
           >
-            Built for Portugal's
-            <span className="block text-[#1B3275]">Most Demanding Sectors</span>
+            Built for the World’s
+            <span className="block text-[#1B3275]">
+              Most Demanding Sectors
+            </span>
           </motion.h1>
 
           <motion.p
@@ -140,9 +133,13 @@ export default function WorkSection() {
             transition={{ delay: 0.4 }}
             className="text-xl md:text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed"
           >
-            From consultation to execution — 100% direct-employed, EU-certified teams delivering 
-            <span className="font-bold text-blue-700"> measurable results</span> across the country.
+            From consultation to execution — 100% direct-employed, globally deployed teams delivering
+            <span className="font-bold text-blue-700"> measurable results</span> across Europe and international markets.
           </motion.p>
+
+          <p className="mt-4 text-sm font-semibold tracking-wide text-blue-700 uppercase">
+            Global Operations • Local Expertise • EU & International Compliance
+          </p>
 
           <motion.div
             initial={{ width: 0 }}
@@ -179,16 +176,16 @@ export default function WorkSection() {
                   <div className="absolute -inset-4 bg-blue-600/10 rounded-full blur-xl -z-10" />
                 </div>
 
-                {/* Content Card */}
+                {/* Content */}
                 <div className={`lg:w-1/2 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
                   <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold text-sm rounded-full mb-4">
                       Step {step.id} of 5
                     </span>
-                    <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-4">
+                    <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
+                    <p className="text-md md:text-lg text-slate-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -206,16 +203,26 @@ export default function WorkSection() {
           transition={{ delay: 0.6 }}
           className="text-center mt-24"
         >
-          <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
             Ready to experience this process firsthand?
           </p>
           <a
             href="/contact"
-            className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-extrabold px-6 py-5 rounded-2xl text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
+            className="group inline-flex items-center gap-1  md:gap-4 bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-semibold px-6 py-5 md:px-6 rounded-2xl text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
           >
             Request Free Consultation
-            <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg
+              className="w-6 h-6 group-hover:translate-x-2 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
           </a>
         </motion.div>
