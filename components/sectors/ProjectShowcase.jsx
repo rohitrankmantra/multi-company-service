@@ -61,7 +61,7 @@ export function ProjectShowcase({
               SELECTED PROJECTS
             </span>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl font-black text-white bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent leading-tight">
               {heading}
             </h2>
 
