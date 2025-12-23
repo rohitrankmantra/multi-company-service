@@ -46,11 +46,11 @@ export function WhoWeAre() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative py-28 overflow-hidden"
-      style={{
-        backgroundImage: "url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: "url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
 
       {/* Motion BG Blobs */}

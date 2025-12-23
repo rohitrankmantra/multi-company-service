@@ -6,7 +6,13 @@ import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
-    firstName: "", lastName: "", company: "", sector: "", phone: "", email: "", message: "",
+    firstName: "",
+    lastName: "",
+    company: "",
+    sector: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,7 +29,15 @@ export default function ContactFormSection() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      setFormData({ firstName: "", lastName: "", company: "", sector: "", phone: "", email: "", message: "" });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        company: "",
+        sector: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
       setTimeout(() => setSubmitted(false), 6000);
     }, 1400);
   };
@@ -80,17 +94,17 @@ export default function ContactFormSection() {
 
         {/* Floating accent blobs */}
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, -30, 0],
-            rotate: [0, 10, 0]
+            rotate: [0, 10, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-20 -left-40 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-indigo-600/5 rounded-full blur-3xl"
         />
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, 30, 0],
-            rotate: [0, -15, 0]
+            rotate: [0, -15, 0],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-10 -right-32 w-80 h-80 bg-gradient-to-tl from-cyan-400/10 to-blue-600/5 rounded-full blur-3xl"
@@ -126,8 +140,9 @@ export default function ContactFormSection() {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto font-light"
           >
-            Tell us about your project. Our team responds in under <span className="font-bold text-blue-700">2 hours</span> — 
-            across all of Portugal.
+            Tell us about your project. Our team responds in under{" "}
+            <span className="font-bold text-blue-700">2 hours</span> — across
+            all of Portugal.
           </motion.p>
         </div>
 
@@ -142,12 +157,28 @@ export default function ContactFormSection() {
               transition={{ delay: 0.2 }}
               className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50"
             >
-              <h3 className="text-2xl font-black text-slate-900 mb-8">Contact Information</h3>
+              <h3 className="text-2xl font-black text-slate-900 mb-8">
+                Contact Information
+              </h3>
               <div className="space-y-7">
                 {[
-                  { icon: Phone, label: "Phone", value: "+356 7960 5019", href: "tel:+35679605019" },
-                  { icon: Mail, label: "Email", value: "solutions.elitework@gmail.com", href: "mailto:solutions.elitework@gmail.com" },
-                  { icon: MapPin, label: "Location", value: "Oporto, Portugal" },
+                  {
+                    icon: Phone,
+                    label: "Phone",
+                    value: "+356 7960 5019",
+                    href: "tel:+35679605019",
+                  },
+                  {
+                    icon: Mail,
+                    label: "Email",
+                    value: "solutions.elitework@gmail.com",
+                    href: "mailto:solutions.elitework@gmail.com",
+                  },
+                  {
+                    icon: MapPin,
+                    label: "Location",
+                    value: "Oporto, Portugal",
+                  },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 group">
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
@@ -156,7 +187,10 @@ export default function ContactFormSection() {
                     <div>
                       <p className="font-bold text-gray-900">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-blue-700 font-medium hover:underline">
+                        <a
+                          href={item.href}
+                          className="text-blue-700 font-medium hover:underline"
+                        >
                           {item.value}
                         </a>
                       ) : (
@@ -176,7 +210,9 @@ export default function ContactFormSection() {
               transition={{ delay: 0.4 }}
               className="bg-gradient-to-br from-[#1B3275] via-blue-900 to-indigo-900 rounded-3xl p-8 text-white shadow-2xl"
             >
-              <h4 className="text-2xl font-black mb-8 tracking-tight">Why Partners Trust Us</h4>
+              <h4 className="text-2xl font-black mb-8 tracking-tight">
+                Why Partners Trust Us
+              </h4>
               <ul className="space-y-5">
                 {[
                   "100% Direct Employment",
@@ -219,33 +255,61 @@ export default function ContactFormSection() {
                   >
                     <CheckCircle className="w-14 h-14 text-white" />
                   </motion.div>
-                  <h3 className="text-4xl font-black text-slate-900 mb-4">Thank You!</h3>
-                  <p className="text-xl text-gray-600">We’ll get back to you within 2 hours.</p>
+                  <h3 className="text-4xl font-black text-slate-900 mb-4">
+                    Thank You!
+                  </h3>
+                  <p className="text-xl text-gray-600">
+                    We’ll get back to you within 2 hours.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Form fields - same as before but with better styling */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {["firstName", "lastName", "company", "phone", "email"].map((field) => (
-                      <div key={field}>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">
-                          {field.includes("first") ? "First Name" : field.includes("last") ? "Last Name" : field.charAt(0).toUpperCase() + field.slice(1).replace("Name", " Name")} *
-                        </label>
-                        <input
-                          type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
-                          name={field}
-                          required
-                          value={formData[field]}
-                          onChange={handleChange}
-                          className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base"
-                          placeholder={field === "company" ? "ABC Construction Lda" : field === "phone" ? "+351 912 345 678" : field === "email" ? "joao@company.pt" : "João"}
-                        />
-                      </div>
-                    ))}
+                    {["firstName", "lastName", "phone", "email"].map(
+                      (field) => (
+                        <div key={field}>
+                          <label className="block text-sm font-bold text-gray-700 mb-2">
+                            {field.includes("first")
+                              ? "First Name"
+                              : field.includes("last")
+                              ? "Last Name"
+                              : field.charAt(0).toUpperCase() +
+                                field.slice(1).replace("Name", " Name")}{" "}
+                            *
+                          </label>
+                          <input
+                            type={
+                              field === "email"
+                                ? "email"
+                                : field === "phone"
+                                ? "tel"
+                                : "text"
+                            }
+                            name={field}
+                            required
+                            value={formData[field]}
+                            onChange={handleChange}
+                            className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-base"
+                            placeholder={
+                              field === "company"
+                                ? "ABC Construction Lda"
+                                : field === "phone"
+                                ? "+351 912 345 678"
+                                : field === "email"
+                                ? "joao@company.pt"
+                                : "João"
+                            }
+                          />
+                        </div>
+                      )
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Sector of Interest *</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      Sector of Interest *
+                    </label>
                     <select
                       name="sector"
                       required
@@ -254,12 +318,18 @@ export default function ContactFormSection() {
                       className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition-all duration-300"
                     >
                       <option value="">Select a sector</option>
-                      {sectors.map((s) => <option key={s} value={s}>{s}</option>)}
+                      {sectors.map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">How can we help you? *</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">
+                      How can we help you? *
+                    </label>
                     <textarea
                       name="message"
                       required
@@ -276,7 +346,9 @@ export default function ContactFormSection() {
                     disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-semibold py-5 px-8 rounded-2xl sm:text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70"
                   >
-                    {isSubmitting ? "Sending Message..." : (
+                    {isSubmitting ? (
+                      "Sending Message..."
+                    ) : (
                       <>
                         Send Message
                         <Send className="w-6 h-6" />

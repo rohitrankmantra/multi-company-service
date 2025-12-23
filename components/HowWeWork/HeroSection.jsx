@@ -14,7 +14,7 @@ export default function HeroSection() {
           alt="How We Work"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/40 to-slate-950/60" />
       </div>
 
       {/* Subtle animated glows */}

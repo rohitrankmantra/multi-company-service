@@ -16,6 +16,8 @@ export default function WorkSection() {
       description:
         "We assess your sector-specific goals—whether construction, hospitality, healthcare, or industrial services—and tailor solutions to local, regional, or international operational environments. Our approach ensures full compliance with EU and global standards from day one.",
       icon: <HiOutlineChat className="w-8 h-8 text-white" />,
+      imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "Team in office meeting analyzing customer needs",
     },
     {
       id: 2,
@@ -23,6 +25,8 @@ export default function WorkSection() {
       description:
         "Our proposals blend efficiency with compliance, drawing from in-house expertise across multiple industries and international markets. We outline clear, actionable steps for seamless integration, minimizing disruptions while maximizing ROI.",
       icon: <HiOutlineSearch className="w-8 h-8 text-white" />,
+      imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "Business team planning operational proposal at desk",
     },
     {
       id: 3,
@@ -30,6 +34,8 @@ export default function WorkSection() {
       description:
         "100% direct-employed teams, rigorously trained and vetted, are assigned based on your project's demands—locally or internationally. This guarantees specialized skills, cultural alignment, and unwavering reliability across all regions of operation.",
       icon: <HiOutlineUserGroup className="w-8 h-8 text-white" />,
+      imageUrl: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "Construction workers assigned to site in international location",
     },
     {
       id: 4,
@@ -37,6 +43,8 @@ export default function WorkSection() {
       description:
         "24/7 oversight by certified supervisors ensures real-time adjustments and strict adherence to safety and performance KPIs. Proactive monitoring keeps projects on track across dynamic global environments, including logistics, shipbuilding, and industrial operations.",
       icon: <HiOutlineEye className="w-8 h-8 text-white" />,
+      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "Supervisor monitoring team on industrial construction site",
     },
     {
       id: 5,
@@ -44,6 +52,8 @@ export default function WorkSection() {
       description:
         "Transparent reports track milestones, KPIs, and continuous improvements, backed by ISO-compliant audits. This fosters operational excellence, client confidence, and long-term partnerships across international markets.",
       icon: <HiOutlineDocumentReport className="w-8 h-8 text-white" />,
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "Analyst reviewing monthly reports and quality charts in office",
     },
   ];
 
@@ -179,6 +189,13 @@ export default function WorkSection() {
                 {/* Content */}
                 <div className={`lg:w-1/2 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
                   <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    {/* Added Image - Now on Top */}
+                    <img
+                      src={step.imageUrl}
+                      alt={step.imageAlt}
+                      className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
+                      loading="lazy"
+                    />
                     <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold text-sm rounded-full mb-4">
                       Step {step.id} of 5
                     </span>
