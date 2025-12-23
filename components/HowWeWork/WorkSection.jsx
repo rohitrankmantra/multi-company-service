@@ -190,15 +190,16 @@ export default function WorkSection() {
                 <div className={`lg:w-1/2 ${index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
                   <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                     {/* Added Image - Now on Top */}
+                           <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold text-sm rounded-full mb-4">
+                      Step {step.id} of 5
+                    </span>
                     <img
                       src={step.imageUrl}
                       alt={step.imageAlt}
                       className="w-full h-48 object-cover rounded-lg shadow-md mb-4"
                       loading="lazy"
                     />
-                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold text-sm rounded-full mb-4">
-                      Step {step.id} of 5
-                    </span>
+             
                     <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-4">
                       {step.title}
                     </h3>
