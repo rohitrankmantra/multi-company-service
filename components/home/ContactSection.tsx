@@ -203,18 +203,6 @@ export function ContactSection() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Company
-                  </label>
-                  <Input
-                    required
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="Your Company Name"
-                    className="h-12"
-                  />
-                </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
