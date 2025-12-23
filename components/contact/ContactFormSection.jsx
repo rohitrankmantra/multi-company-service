@@ -142,11 +142,11 @@ export default function ContactFormSection() {
               transition={{ delay: 0.2 }}
               className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50"
             >
-              <h3 className="text-2xl font-bold text-slate-900 mb-8">Contact Information</h3>
+              <h3 className="text-2xl font-black text-slate-900 mb-8">Contact Information</h3>
               <div className="space-y-7">
                 {[
                   { icon: Phone, label: "Phone", value: "+356 7960 5019", href: "tel:+35679605019" },
-                  { icon: Mail, label: "Email", value: "solutions.elitework@gmail.com", href: "solutions.elitework@gmail.com" },
+                  { icon: Mail, label: "Email", value: "solutions.elitework@gmail.com", href: "mailto:solutions.elitework@gmail.com" },
                   { icon: MapPin, label: "Location", value: "Oporto, Portugal" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 group">
@@ -194,7 +194,7 @@ export default function ContactFormSection() {
                     className="flex items-center gap-4"
                   >
                     <CheckCircle className="w-6 h-6 text-cyan-300 flex-shrink-0" />
-                    <span className="font-medium text-lg">{item}</span>
+                    <span className="font-medium text-md">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -274,7 +274,7 @@ export default function ContactFormSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-black py-5 px-8 rounded-2xl sm:text-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70"
+                    className="w-full bg-gradient-to-r from-[#1B3275] to-blue-900 hover:from-blue-900 hover:to-indigo-900 text-white font-semibold py-5 px-8 rounded-2xl sm:text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-4 disabled:opacity-70"
                   >
                     {isSubmitting ? "Sending Message..." : (
                       <>

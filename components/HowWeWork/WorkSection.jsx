@@ -168,7 +168,7 @@ export default function WorkSection() {
               >
                 {/* Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-gradient-to-br from-[#1B3275] via-blue-800 to-indigo-900 p-1 shadow-2xl">
+                  <div className="w-20 h-20 lg:w-20 lg:h-20 rounded-3xl bg-gradient-to-br from-[#1B3275] via-blue-800 to-indigo-900 p-1 shadow-2xl">
                     <div className="w-full h-full rounded-3xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
                       {step.icon}
                     </div>
