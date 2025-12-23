@@ -131,7 +131,7 @@ export function ContactSection() {
                 },{
                   icon: MapPin,
                   title: "Location",
-                  value: "Serving All over the world"
+                  value: "Oporto, Portugal"
                 }].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-4">
                     <div className="flex-shrink-0">

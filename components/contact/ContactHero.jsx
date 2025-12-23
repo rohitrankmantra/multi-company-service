@@ -14,7 +14,7 @@ export default function ContactHero() {
           alt="Contact us – Professional partnership"
           className="h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-slate-950/30 to-slate-950/30" />
       </div>
 
       {/* Animated glows */}
