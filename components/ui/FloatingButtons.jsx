@@ -15,7 +15,7 @@ export default function FloatingButtons() {
         transition={{ duration: 0.4 }}
       >
         <Link
-          href="https://wa.me/351000000000?text=Hello%20I%20need%20more%20information"
+          href="https://wa.me/+35679605019?text=Hello%20I%20need%20more%20information"
           target="_blank"
           className="bg-green-500 hover:bg-green-600 text-white shadow-xl rounded-full p-3 md:p-4 flex items-center justify-center transition-all duration-300"
         >
