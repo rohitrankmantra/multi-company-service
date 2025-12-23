@@ -109,19 +109,19 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
 
             <div className="space-y-4 text-sm text-slate-600">
-              <a href="tel:+351XXXXXXXX" className="flex items-center gap-3 hover:text-slate-900">
+              <a href="tel:+35179605019" className="flex items-center gap-3 hover:text-slate-900">
                 <Phone size={18} />
-                +351 XXX XXX XXX
+                +356 7960 5019
               </a>
 
-              <a href="mailto:contact@companyb.pt" className="flex items-center gap-3 hover:text-slate-900">
+              <a href="mailto:solutions.elitework@gmail.com" className="flex items-center gap-3 hover:text-slate-900">
                 <Mail size={18} />
-                contact@companyb.pt
+                solutions.elitework@gmail.com
               </a>
 
               <div className="flex items-center gap-3">
                 <MapPin size={18} />
-                Portugal
+               Oporto, Portugal
               </div>
             </div>
           </motion.div>

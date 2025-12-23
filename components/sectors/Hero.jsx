@@ -105,7 +105,7 @@ export function Hero({
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(37,99,235,0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-2xl shadow-2xl transition-all duration-300 flex items-center gap-3"
+                className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-2xl shadow-2xl transition-all duration-300 flex items-center gap-3"
               >
                 <span>{ctaText}</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
