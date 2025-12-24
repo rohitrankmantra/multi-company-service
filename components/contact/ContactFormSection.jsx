@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    company: "",
     sector: "",
     phone: "",
     email: "",
@@ -22,24 +22,38 @@ export default function ContactFormSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await emailjs.send(
+        "service_lgvxmr4",
+        "template_p2sad3o",
+        {
+          ...formData,
+        },
+        "DozN3G_eZ7ZgA19T5"
+      );
+
       setSubmitted(true);
+
       setFormData({
         firstName: "",
         lastName: "",
-        company: "",
         sector: "",
         phone: "",
         email: "",
         message: "",
       });
+
       setTimeout(() => setSubmitted(false), 6000);
-    }, 1400);
+    } catch (err) {
+      alert("Oops — message failed. Try again!");
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const sectors = [
