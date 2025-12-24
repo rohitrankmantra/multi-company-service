@@ -85,21 +85,20 @@ export function Navigation() {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white'
       }`}
     >
-      <div className="max-w mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className=" mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 ">
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <img 
-              src="/logo.png" 
+              src="/footerlogo.png" 
               alt="Elite Work Solutions" 
-              className={`w-[40%] transition-all duration-300 `} 
+              className={`h-28 w-auto object-contain shrink-0`} 
             />
-          
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-12 ">
+          <div className="hidden lg:flex items-center space-x-12  ">
             <Link
               href="/"
               className={`relative text-base font-medium group ${

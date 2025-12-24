@@ -8,9 +8,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
+import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,12 +29,27 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        "service_lgvxmr4",
+        "template_p2sad3o",
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          phone: formData.phone,
+          email: formData.email,
+          sector: formData.sector,
+          message: formData.message,
+          company: formData.company || "Elite Work Solutions"
+        },
+        "DozN3G_eZ7ZgA19T5"
+      );
+
       toast({
-        title: 'Message Sent Successfully',
-        description: 'We will contact you within 24 hours.',
+        title: "Message Sent Successfully",
+        description: "We will contact you within 24 hours.",
       });
-      setIsSubmitting(false);
+
       setFormData({
         firstName: '',
         lastName: '',
@@ -42,11 +59,22 @@ export function ContactSection() {
         email: '',
         message: ''
       });
-    }, 1000);
+
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+      console.error(error);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
     <section id="contact" className="relative py-24 overflow-hidden bg-gray-700">
+
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-sky-50">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
@@ -64,6 +92,7 @@ export function ContactSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -108,7 +137,8 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
+
+          {/* LEFT SIDE — CONTACT INFO */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -120,24 +150,14 @@ export function ContactSection() {
               <h3 className="text-2xl font-bold text-blue-900 mb-6">Get in Touch</h3>
 
               <div className="space-y-6">
-                {[{
-                  icon: Phone,
-                  title: "Phone",
-                  value: "+356 7960 5019"
-                },{
-                  icon: Mail,
-                  title: "Email",
-                  value: "solutions.elitework@gmail.com"
-                },{
-                  icon: MapPin,
-                  title: "Location",
-                  value: "Oporto, Portugal"
-                }].map((item, idx) => (
+                {[
+                  { icon: Phone, title: "Phone", value: "+356 7960 5019" },
+                  { icon: Mail, title: "Email", value: "solutions.elitework@gmail.com" },
+                  { icon: MapPin, title: "Location", value: "Oporto, Portugal" }
+                ].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                        <item.icon className="h-6 w-6 text-blue-600" />
-                      </div>
+                    <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                      <item.icon className="h-6 w-6 text-blue-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
@@ -166,7 +186,7 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Form */}
+          {/* RIGHT SIDE — FORM */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -175,7 +195,9 @@ export function ContactSection() {
             className="lg:col-span-2"
           >
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-xl border border-blue-100">
+
               <form onSubmit={handleSubmit} className="space-y-6">
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -189,6 +211,7 @@ export function ContactSection() {
                       className="h-12"
                     />
                   </div>
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Last Name
@@ -203,11 +226,11 @@ export function ContactSection() {
                   </div>
                 </div>
 
-
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Sector of Interest
                   </label>
+
                   <Select
                     required
                     value={formData.sector}
@@ -216,6 +239,7 @@ export function ContactSection() {
                     <SelectTrigger className="h-12">
                       <SelectValue placeholder="Select a sector" />
                     </SelectTrigger>
+
                     <SelectContent>
                       <SelectItem value="construction">Construction & Shipyards</SelectItem>
                       <SelectItem value="shipbuilding">Shipbuilding</SelectItem>
@@ -235,13 +259,13 @@ export function ContactSection() {
                     </label>
                     <Input
                       required
-                      type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+351 XXX XXX XXX"
                       className="h-12"
                     />
                   </div>
+
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       Email
@@ -276,12 +300,15 @@ export function ContactSection() {
                   disabled={isSubmitting}
                   className="w-full h-14 text-lg bg-gradient-to-br from-slate-900 to-blue-900"
                 >
-                  {isSubmitting ? 'Sending...' : 'Request Information'}
+                  {isSubmitting ? "Sending..." : "Request Information"}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
+
               </form>
+
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
