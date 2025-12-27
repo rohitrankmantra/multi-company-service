@@ -96,7 +96,7 @@ export function WhyChooseUs() {
     </h2>
 
     <p className="text-xl text-slate-600">
-      Learn how we operate, our team structure, and why companies trust us across Portugal.
+      Learn how we operate, our team structure, and why companies trust us across Europe.
     </p>
   </motion.div>
 
