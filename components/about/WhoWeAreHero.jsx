@@ -86,7 +86,7 @@ export function WhoWeAreHero() {
           transition={{ duration: 1 }}
           className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto"
         >
-          Delivering operational, technical and management services across Portugal — 
+          Delivering operational, technical and management services across the Europe — 
           powered by trained professionals, trusted leadership, and a commitment to excellence.
         </motion.p>
 
