@@ -57,9 +57,9 @@ export function Footer() {
 
             <div className="flex gap-4 relative md:top-[-40px] pt-0 ">
               {[
-                { href: 'https://facebook.com/companyb', icon: Facebook },
-                { href: 'https://twitter.com/companyb', icon: Twitter },
-                { href: 'https://linkedin.com/company/companyb', icon: Linkedin },
+                { href: 'https://www.facebook.com/profile.php?id=61585608935141&mibextid=wwXIfr&rdid=GMOIdFxGKF44c53G&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C3y6FWp14%2F%3Fmibextid%3DwwXIfr%26ref%3D1#', icon: Facebook },
+                { href: 'https://twitter.com', icon: Twitter },
+                { href: 'https://linkedin.com', icon: Linkedin },
               ].map(({ href, icon: Icon }) => (
                 <Link
                   key={href}
