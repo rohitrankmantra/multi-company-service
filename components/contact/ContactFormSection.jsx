@@ -179,8 +179,8 @@ export default function ContactFormSection() {
                   {
                     icon: Phone,
                     label: "Phone",
-                    value: "+356 7960 5019",
-                    href: "tel:+35679605019",
+                    value: "+356 7960 4992",
+                    href: "tel:+35679604992",
                   },
                   {
                     icon: Mail,

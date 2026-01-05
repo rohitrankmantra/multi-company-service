@@ -151,7 +151,7 @@ export function ContactSection() {
 
               <div className="space-y-6">
                 {[
-                  { icon: Phone, title: "Phone", value: "+356 7960 5019" },
+                  { icon: Phone, title: "Phone", value: "+356 7960 4992" },
                   { icon: Mail, title: "Email", value: "solutions.elitework@gmail.com" },
                   { icon: MapPin, title: "Location", value: "Oporto, Portugal" }
                 ].map((item, idx) => (

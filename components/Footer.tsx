@@ -109,9 +109,9 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
 
             <div className="space-y-4 text-sm text-slate-600">
-              <a href="tel:+35179605019" className="flex items-center gap-3 hover:text-slate-900">
+              <a href="tel:+35179604992" className="flex items-center gap-3 hover:text-slate-900">
                 <Phone size={18} />
-                +356 7960 5019
+                +356 7960 4992
               </a>
 
               <a href="mailto:solutions.elitework@gmail.com" className="flex items-center gap-3 hover:text-slate-900">
