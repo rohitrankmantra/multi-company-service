@@ -96,6 +96,7 @@ export function Footer() {
               { label: 'How We Work', href: '/how-we-work' },
               { label: 'Our Staff', href: '/our-staff' },
               { label: 'Contact', href: '/contact' },
+              {label : 'Legal Notice', href: '/legal-notice'},
             ]}
           />
 
